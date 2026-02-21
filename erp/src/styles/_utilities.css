@@ -1,0 +1,225 @@
+/* =========================================================
+   ERP - Utilities / Helper Classes
+   ========================================================= */
+
+/* ---------- Layout helpers ---------- */
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.gap-1 {
+    gap: 0.25rem;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.gap-3 {
+    gap: 0.75rem;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.gap-6 {
+    gap: 1.5rem;
+}
+
+.gap-8 {
+    gap: 2rem;
+}
+
+/* ---------- Spacing ---------- */
+.p-0 {
+    padding: 0;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.p-8 {
+    padding: 2rem;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.mt-6 {
+    margin-top: 1.5rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+/* ---------- Text helpers ---------- */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-muted {
+    color: var(--color-text-muted);
+}
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-success {
+    color: var(--color-success);
+}
+
+.text-danger {
+    color: var(--color-danger);
+}
+
+.text-warning {
+    color: var(--color-warning);
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+/* ---------- Glassmorphism card ---------- */
+.glass-card {
+    background: rgba(30, 41, 59, 0.65);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-glass);
+    padding: 1.5rem;
+    transition: var(--transition-normal);
+}
+
+.glass-card:hover {
+    border-color: rgba(99, 102, 241, 0.45);
+    box-shadow: 0 12px 40px rgba(99, 102, 241, 0.22);
+    transform: translateY(-2px);
+}
+
+/* ---------- Gradient backgrounds ---------- */
+.gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+}
+
+.gradient-dark {
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+}
+
+/* ---------- Stat card ---------- */
+.stat-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    transition: var(--transition-normal);
+}
+
+.stat-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+}
+
+.stat-card .stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.stat-card .stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text);
+}
+
+.stat-card .stat-label {
+    font-size: 0.815rem;
+    color: var(--color-text-muted);
+    margin-top: 0.25rem;
+}
+
+/* ---------- Page section ---------- */
+.page-section {
+    padding: 3rem 0;
+}
+
+.page-section+.page-section {
+    border-top: 1px solid var(--color-border);
+}
+
+/* ---------- Overflow helpers ---------- */
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+/* ---------- Responsive grid ---------- */
+.grid-auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
