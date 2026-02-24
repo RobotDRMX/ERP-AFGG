@@ -1,0 +1,10 @@
+@if (visible()) {
+<div class="fixed top-0 left-0 w-full h-full flex-center z-10 overlay-glass">
+    <div class="flex-col flex-center gap-4">
+        <p-progressSpinner strokeWidth="4" fill="transparent" animationDuration=".8s" />
+        @if (message()) {
+        <p class="text-xl font-medium text-color">{{ message() }}</p>
+        }
+    </div>
+</div>
+}
