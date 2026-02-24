@@ -1,0 +1,29 @@
+<div class="mb-6">
+    <h2 class="text-2xl font-bold text-color">Lista de Precios</h2>
+    <p class="text-muted">Consulte y actualice los precios de sus servicios.</p>
+</div>
+
+<p-dataView [value]="products" [layout]="'grid'">
+    <ng-template pTemplate="grid" let-products>
+        <div class="grid-auto-fit">
+            @for (product of products; track product.id) {
+            <p-card class="m-2">
+                <div class="flex-col gap-4">
+                    <div class="flex-between">
+                        <span class="text-sm text-muted">{{ product.category }}</span>
+                        <p-tag [value]="product.inventoryStatus" [severity]="getSeverity(product.inventoryStatus)" />
+                    </div>
+                    <div class="text-center py-4">
+                        <div class="font-bold text-2xl mb-1 text-color">{{ product.name }}</div>
+                        <p class="m-0 text-muted text-sm">{{ product.description }}</p>
+                    </div>
+                    <div class="flex-between">
+                        <span class="font-bold text-2xl text-primary">{{ product.price | currency:'USD' }}</span>
+                        <p-button icon="pi pi-shopping-cart" [rounded]="true" />
+                    </div>
+                </div>
+            </p-card>
+            }
+        </div>
+    </ng-template>
+</p-dataView>

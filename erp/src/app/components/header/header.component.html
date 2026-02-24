@@ -1,0 +1,35 @@
+<header class="flex-between sticky top-0 z-5 px-6 border-b header-surface">
+    <div class="flex-center gap-2 cursor-pointer" routerLink="/landing-page">
+        <i class="pi pi-prime text-primary text-2xl"></i>
+        <span class="text-xl font-bold text-color">ERP<span class="text-primary">Pro</span></span>
+    </div>
+
+    <nav class="flex-center gap-2 hidden md:flex">
+        @if (auth.isAuthenticated()) {
+        <a routerLink="/dashboard" routerLinkActive="active-link" class="nav-btn"><i class="pi pi-home"></i>
+            Dashboard</a>
+        <a routerLink="/financial-summary" routerLinkActive="active-link" class="nav-btn"><i
+                class="pi pi-chart-bar"></i> Finanzas</a>
+        <a routerLink="/prices" routerLinkActive="active-link" class="nav-btn"><i class="pi pi-tag"></i> Precios</a>
+        <a routerLink="/logs" routerLinkActive="active-link" class="nav-btn"><i class="pi pi-list"></i> Logs</a>
+        } @else {
+        <a routerLink="/landing-page" routerLinkActive="active-link" class="nav-btn">Inicio</a>
+        <a href="#" class="nav-btn">Características</a>
+        <a href="#" class="nav-btn">Soluciones</a>
+        }
+    </nav>
+
+    <div class="flex-center gap-3">
+        @if (auth.isAuthenticated()) {
+        <p-button icon="pi pi-bell" [rounded]="true" [text]="true" severity="secondary"
+            (onClick)="notificationClick.emit()" />
+
+        <p-avatar [label]="auth.currentUser()?.name?.substring(0,2) || 'U'" shape="circle"
+            class="cursor-pointer shadow-1" (click)="auth.logout()" pTooltip="Cerrar Sesión" tooltipPosition="bottom" />
+        } @else {
+        <p-button label="Iniciar Sesión" icon="pi pi-sign-in" severity="primary" [outlined]="true"
+            routerLink="/auth/login" />
+        <p-button label="Registrarse" icon="pi pi-user-plus" severity="primary" routerLink="/auth/register" />
+        }
+    </div>
+</header>

@@ -1,0 +1,21 @@
+<footer class="px-6 pb-4">
+    <p-divider />
+    <div class="flex-between flex-wrap gap-2 text-sm py-4">
+        <span class="font-semibold text-color flex items-center gap-1">
+            <i class="pi pi-prime text-primary"></i> ERP<span class="text-primary">Pro</span>
+            <span class="text-muted ml-1">&copy; {{ currentYear }}</span>
+        </span>
+
+        <nav class="flex items-center gap-3">
+            <a routerLink="/landing-page"
+                class="text-muted no-underline hover:text-primary transition-colors">Inicio</a>
+            <span class="text-muted opacity-50">·</span>
+            <a routerLink="/dashboard"
+                class="text-muted no-underline hover:text-primary transition-colors">Dashboard</a>
+            <span class="text-muted opacity-50">·</span>
+            <a routerLink="/logs" class="text-muted no-underline hover:text-primary transition-colors">Logs</a>
+        </nav>
+
+        <span class="text-xs text-muted">v0.1.0 — Angular + PrimeNG</span>
+    </div>
+</footer>

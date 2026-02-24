@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { MainLayoutComponent } from './layouts/main-layout.component';
-import { AdminLayoutComponent } from './layouts/admin-layout.component';
-import { AuthLayoutComponent } from './layouts/auth-layout.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 
 export const routes: Routes = [
     {
@@ -15,15 +15,15 @@ export const routes: Routes = [
             },
             {
                 path: 'landing-page',
-                loadComponent: () => import('./pages/landing-page.component')
+                loadComponent: () => import('./pages/landing-page/landing-page.component')
             },
             {
                 path: 'dashboard',
-                loadComponent: () => import('./pages/dashboard.component')
+                loadComponent: () => import('./pages/dashboard/dashboard.component')
             },
             {
                 path: 'prices',
-                loadComponent: () => import('./pages/prices.component')
+                loadComponent: () => import('./pages/prices/prices.component')
             }
         ]
     },
@@ -33,11 +33,11 @@ export const routes: Routes = [
         children: [
             {
                 path: 'login',
-                loadComponent: () => import('./pages/auth/login.component')
+                loadComponent: () => import('./pages/auth/login/login.component')
             },
             {
                 path: 'register',
-                loadComponent: () => import('./pages/auth/register.component')
+                loadComponent: () => import('./pages/auth/register/register.component')
             }
         ]
     },
@@ -47,15 +47,15 @@ export const routes: Routes = [
         children: [
             {
                 path: 'admin-user',
-                loadComponent: () => import('./pages/admin-user.component')
+                loadComponent: () => import('./pages/admin-user/admin-user.component')
             },
             {
                 path: 'logs',
-                loadComponent: () => import('./pages/logs.component')
+                loadComponent: () => import('./pages/logs/logs.component')
             },
             {
                 path: 'financial-summary',
-                loadComponent: () => import('./pages/financial-summary.component')
+                loadComponent: () => import('./pages/financial-summary/financial-summary.component')
             }
         ]
     },

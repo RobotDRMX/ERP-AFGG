@@ -7,22 +7,7 @@ import { ChartModule } from 'primeng/chart';
     selector: 'app-financial-summary',
     standalone: true,
     imports: [CommonModule, CardModule, ChartModule],
-    template: `
-    <div class="page-header mb-6">
-      <h2>Resumen Financiero</h2>
-      <p>Estado actual de las finanzas de la compañía.</p>
-    </div>
-
-    <div class="grid-auto-fit mb-6">
-      <p-card header="Egresos vs Ingresos">
-        <p-chart type="bar" [data]="basicData" [options]="basicOptions" />
-      </p-card>
-      
-      <p-card header="Distribución de Gastos">
-        <p-chart type="pie" [data]="pieData" [options]="pieOptions" />
-      </p-card>
-    </div>
-  `
+    templateUrl: './financial-summary.component.html'
 })
 export default class FinancialSummaryComponent {
     basicData = {

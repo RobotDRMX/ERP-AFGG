@@ -7,16 +7,7 @@ import { LoadingService } from './services/loading.service';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, LoadingComponent],
-  template: `
-    <router-outlet />
-    <app-loading [visible]="loadingService.loading()" [message]="loadingService.message()" />
-  `,
-  styles: [`
-    :host {
-      display: block;
-      height: 100vh;
-    }
-  `]
+  templateUrl: './app.component.html'
 })
 export class App {
   loadingService = inject(LoadingService);
