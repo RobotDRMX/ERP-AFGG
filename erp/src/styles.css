@@ -1,0 +1,19 @@
+/* ===================================================
+   ERP - Global Stylesheet Entry Point
+   Order matters: variables → typography → utilities → overrides
+   =================================================== */
+
+/* 1. PrimeNG icons */
+@import 'primeicons/primeicons.css';
+
+/* 2. Design tokens */
+@import './styles/_variables.css';
+
+/* 3. Typography & reset */
+@import './styles/_typography.css';
+
+/* 4. Utility classes */
+@import './styles/_utilities.css';
+
+/* 5. PrimeNG theme overrides */
+@import './styles/_primeng-overrides.css';

@@ -1,0 +1,59 @@
+<div class="w-full login-card-max-w">
+    <div class="glass-card p-8">
+        <div class="text-center mb-6">
+            <div
+                class="bg-primary text-white p-3 border-round-xl inline-flex items-center justify-center text-2xl shadow-2 mb-3">
+                <i class="pi pi-prime"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-1">Bienvenido de nuevo</h2>
+            <p class="text-sm text-muted">Ingresa tus credenciales para acceder a tu panel</p>
+        </div>
+
+        @if (errorMessage()) {
+        <div class="mb-4">
+            <p-message severity="error" [text]="errorMessage()" styleClass="w-full" />
+        </div>
+        }
+
+        <form (ngSubmit)="login()" class="flex-col gap-6">
+            <p-floatLabel>
+                <input pInputText id="email" type="email" [(ngModel)]="email" name="email" class="w-full input-glass"
+                    required />
+                <label for="email">Correo Electrónico</label>
+            </p-floatLabel>
+
+            <p-floatLabel>
+                <p-password [(ngModel)]="password" name="password" [toggleMask]="true" [feedback]="false"
+                    styleClass="w-full" inputStyleClass="w-full input-glass" />
+                <label for="password">Contraseña</label>
+            </p-floatLabel>
+
+            <div class="flex-between">
+                <div class="flex items-center gap-2">
+                    <p-checkbox [(ngModel)]="remember" [binary]="true" inputId="remember" name="remember" />
+                    <label for="remember" class="text-xs cursor-pointer text-muted">Recordarme</label>
+                </div>
+                <a href="#" class="text-xs text-primary font-semibold no-underline">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <p-button label="Iniciar Sesión" type="submit" [loading]="isLoading()" styleClass="w-full p-3 font-bold" />
+        </form>
+
+        <p-divider align="center">
+            <span class="text-xs text-muted">O continúa con</span>
+        </p-divider>
+
+        <div class="flex gap-3">
+            <p-button icon="pi pi-google" severity="secondary" [outlined]="true" styleClass="w-full" label="Google" />
+            <p-button icon="pi pi-github" severity="secondary" [outlined]="true" styleClass="w-full" label="GitHub" />
+        </div>
+
+        <div class="text-center mt-8">
+            <p class="text-sm">
+                ¿No tienes una cuenta?
+                <a routerLink="/auth/register" class="font-bold text-primary hover:underline no-underline">Regístrate
+                    gratis</a>
+            </p>
+        </div>
+    </div>
+</div>

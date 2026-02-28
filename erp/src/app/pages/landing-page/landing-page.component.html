@@ -1,0 +1,106 @@
+<div class="flex-col gap-8">
+    <!-- Hero Section -->
+    <section class="grid-auto-fit py-8 items-center md:landing-hero-grid">
+        <div class="flex-col gap-6">
+            <div class="inline-flex py-1 px-3 bg-primary bg-opacity-10 text-primary hero-badge text-xs font-semibold">
+                Novedad: Módulo
+                de IA integrado</div>
+            <h1 class="text-4xl font-black mb-1">Transforma tu Empresa con <span class="text-primary">ERP Pro</span>
+            </h1>
+            <p class="text-xl text-muted">La plataforma Cloud nativa diseñada para automatizar tus finanzas, gestionar
+                tu equipo y escalar tus operaciones globales con total confianza.</p>
+            <div class="flex gap-4">
+                <p-button label="Iniciar Prueba Gratuita" icon="pi pi-bolt" routerLink="/auth/register"
+                    styleClass="p-3 font-bold" />
+                <p-button label="Ver Demo" icon="pi pi-play" severity="secondary" [outlined]="true" styleClass="p-3" />
+            </div>
+            <div class="flex-col gap-2 mt-6">
+                <span class="text-xs uppercase text-muted font-bold">Confiado por más de 500+ empresas</span>
+                <div class="flex gap-6 text-xl text-muted opacity-50">
+                    <i class="pi pi-amazon"></i>
+                    <i class="pi pi-apple"></i>
+                    <i class="pi pi-microsoft"></i>
+                    <i class="pi pi-google"></i>
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:flex justify-center orient-perspective">
+            <div class="glass-card w-full shadow-glass mockup-rotate">
+                <div class="p-3 border-b flex gap-1">
+                    <span class="w-dot h-dot bg-red border-round-full"></span>
+                    <span class="w-dot h-dot bg-yellow border-round-full"></span>
+                    <span class="w-dot h-dot bg-green border-round-full"></span>
+                </div>
+                <div class="p-6 flex-col gap-4">
+                    <div class="w-full mockup-gradient-bar">
+                    </div>
+                    <div class="w-full mockup-row"></div>
+                    <div class="w-10 mockup-row"></div>
+                    <div class="w-8 mockup-row"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-8">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl font-bold mb-2">Todo lo que necesitas en un solo lugar</h2>
+            <p class="text-muted">Herramientas potentes para cada departamento de tu organización.</p>
+        </div>
+
+        <div class="grid-auto-fit">
+            <div class="glass-card flex-col gap-4">
+                <div class="flex-center bg-gradient-blue text-white feature-icon text-xl">
+                    <i class="pi pi-wallet"></i>
+                </div>
+                <h3 class="text-xl font-bold">Finanzas en tiempo real</h3>
+                <p class="text-muted">Monitorea tu flujo de caja, egresos y facturación con reportes financieros
+                    automáticos.</p>
+            </div>
+
+            <div class="glass-card flex-col gap-4">
+                <div class="flex-center bg-gradient-purple text-white feature-icon text-xl">
+                    <i class="pi pi-users"></i>
+                </div>
+                <h3 class="text-xl font-bold">Gestión de Talento</h3>
+                <p class="text-muted">Control de asistencia, roles jerárquicos y perfiles de usuario avanzados.</p>
+            </div>
+
+            <div class="glass-card flex-col gap-4">
+                <div class="flex-center bg-gradient-orange text-white feature-icon text-xl">
+                    <i class="pi pi-shield"></i>
+                </div>
+                <h3 class="text-xl font-bold">Seguridad Grado Bancario</h3>
+                <p class="text-muted">Tus datos están protegidos con encriptación de extremo a extremo y auditoría
+                    detallada.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="gradient-primary border-round-3xl p-8 flex-between flex-wrap gap-8 text-white">
+        <div class="text-center">
+            <span class="text-4xl font-black block">99.9%</span>
+            <span class="text-xs uppercase font-bold opacity-80">Uptime</span>
+        </div>
+        <div class="text-center">
+            <span class="text-4xl font-black block">24/7</span>
+            <span class="text-xs uppercase font-bold opacity-80">Soporte</span>
+        </div>
+        <div class="text-center">
+            <span class="text-4xl font-black block">10x</span>
+            <span class="text-xs uppercase font-bold opacity-80">Productividad</span>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="text-center py-8">
+        <div class="glass-card flex-col flex-center gap-6 border-primary border-all">
+            <h2 class="text-2xl font-bold">¿Listo para dar el siguiente paso?</h2>
+            <p class="text-muted">Únete a la revolución de la gestión empresarial moderna.</p>
+            <p-button label="Crear mi cuenta ahora" icon="pi pi-user-plus" routerLink="/auth/register"
+                styleClass="p-3 px-6 font-bold" />
+        </div>
+    </section>
+</div>

@@ -1,0 +1,36 @@
+<div class="flex-col min-h-screen overflow-hidden">
+    <app-header />
+    <div class="flex flex-1 overflow-hidden">
+        <!-- Sidebar -->
+        <aside class="surface-overlay border-r flex-col transition-all duration-300"
+            [class.sidebar-collapsed-width]="isCollapsed()" [class.sidebar-width]="!isCollapsed()">
+            <div class="p-6 flex-between border-b">
+                <span class="font-bold text-color overflow-hidden no-wrap"
+                    [class.hidden]="isCollapsed()">Administración</span>
+                <p-button icon="pi pi-bars" [text]="true" (onClick)="toggleSidebar()" severity="secondary" />
+            </div>
+
+            <nav class="flex-col gap-2 p-4">
+                <a routerLink="/admin-user" routerLinkActive="active-link" class="nav-btn no-underline">
+                    <i class="pi pi-users"></i>
+                    <span [class.hidden]="isCollapsed()">Usuarios</span>
+                </a>
+                <a routerLink="/logs" routerLinkActive="active-link" class="nav-btn no-underline">
+                    <i class="pi pi-history"></i>
+                    <span [class.hidden]="isCollapsed()">Logs</span>
+                </a>
+                <a routerLink="/financial-summary" routerLinkActive="active-link" class="nav-btn no-underline">
+                    <i class="pi pi-wallet"></i>
+                    <span [class.hidden]="isCollapsed()">Finanzas</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-auto p-8">
+            <div class="admin-main-max-w">
+                <router-outlet />
+            </div>
+        </main>
+    </div>
+</div>
