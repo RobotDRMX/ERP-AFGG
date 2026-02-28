@@ -1,0 +1,61 @@
+<!-- Header -->
+<div class="flex-between mb-6">
+    <div>
+        <h2 class="text-2xl font-bold text-color">Usuarios</h2>
+        <p class="text-muted">Gestiona los perfiles y roles de cada usuario.</p>
+    </div>
+    <p-button label="Nuevo Usuario" icon="pi pi-plus" />
+</div>
+
+<!-- User profile cards -->
+<div class="grid-auto-fit">
+    @for (user of userService.users(); track user.id) {
+        <p-card>
+            <!-- Profile header -->
+            <ng-template pTemplate="header">
+                <div class="flex-col flex-center p-6 border-b gap-3">
+                    <p-avatar [label]="getInitials(user.name)" size="xlarge"
+                        shape="circle" styleClass="bg-primary-soft text-primary"
+                        style="font-size: 1.25rem; font-weight: 700;" />
+                    <div class="text-center">
+                        <p class="font-bold text-color text-xl mb-1">{{ user.name }}</p>
+                        <p class="text-muted text-sm">{{ user.email }}</p>
+                    </div>
+                    <p-tag [value]="getRoleLabel(user.role)" [severity]="getRoleSeverity(user.role)" />
+                </div>
+            </ng-template>
+
+            <!-- Profile details -->
+            <div>
+                <div class="flex-between py-2">
+                    <span class="text-muted text-sm">Estado</span>
+                    <p-tag [value]="user.active ? 'ACTIVO' : 'INACTIVO'"
+                        [severity]="user.active ? 'success' : 'danger'" />
+                </div>
+                <p-divider styleClass="my-1" />
+
+                <div class="flex-between py-2">
+                    <span class="text-muted text-sm">Empresa ID</span>
+                    <span class="font-medium text-color">#{{ user.companyId }}</span>
+                </div>
+                <p-divider styleClass="my-1" />
+
+                <div class="flex-between py-2">
+                    <span class="text-muted text-sm">Registro</span>
+                    <span class="font-medium text-color">{{ user.createdAt | date:'shortDate' }}</span>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <ng-template pTemplate="footer">
+                <p-button label="Editar" icon="pi pi-pencil" [text]="true" size="small" />
+                <p-button
+                    [label]="user.active ? 'Desactivar' : 'Activar'"
+                    [icon]="user.active ? 'pi pi-user-minus' : 'pi pi-user-plus'"
+                    [severity]="user.active ? 'danger' : 'success'"
+                    [text]="true" size="small" styleClass="ml-1"
+                    (onClick)="userService.toggleActive(user.id)" />
+            </ng-template>
+        </p-card>
+    }
+</div>

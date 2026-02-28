@@ -36,7 +36,7 @@ export default class LoginComponent {
             this.isLoading.set(false);
 
             if (success) {
-                this.router.navigate(['/dashboard']);
+                this.router.navigate(['/group']);
             } else {
                 this.errorMessage.set('Credenciales inválidas. Verifica tu correo y contraseña.');
             }

@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { ClassLayoutComponent } from './layouts/class-layout/class-layout.component';
 
 export const routes: Routes = [
     {
@@ -56,6 +57,20 @@ export const routes: Routes = [
             {
                 path: 'financial-summary',
                 loadComponent: () => import('./pages/financial-summary/financial-summary.component')
+            }
+        ]
+    },
+    {
+        path: '',
+        component: ClassLayoutComponent,
+        children: [
+            {
+                path: 'group',
+                loadComponent: () => import('./pages/group/group.component')
+            },
+            {
+                path: 'user',
+                loadComponent: () => import('./pages/user/user.component')
             }
         ]
     },
